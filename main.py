@@ -53,7 +53,7 @@ class ChatChain:
         self.vectorstore = load_vectorstore(persist_directory)
         self.retriever = self.vectorstore.as_retriever(
             search_type="similarity",
-            search_kwargs={"k": 20}
+            search_kwargs={"k": 18}
         )
         self.llm = ChatGroq(model="llama-3.3-70b-versatile", temperature=0.1, api_key=GROQ_API_KEY)
         self.chat_history = []
