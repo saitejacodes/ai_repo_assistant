@@ -6,3 +6,4 @@ sentence-transformers
 gitpython
 streamlit
 python-dotenv
+# Version: 1.0.0 (Production Stable)
