@@ -101,7 +101,7 @@ def run_ingestion(repo_url, persist_directory=CHROMA_DIR):
     embeddings = create_embeddings()
     store_in_chroma(chunks, embeddings, persist_directory)
     print("=" * 50)
-    print("Ingestion complete!")
+    print("Repository context indexing complete!")
     print(f"Files indexed: {len(documents)}")
     print(f"Chunks created: {len(chunks)}")
     file_list = [doc["metadata"]["source"] for doc in documents]
