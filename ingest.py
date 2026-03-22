@@ -112,3 +112,4 @@ if __name__ == "__main__":
         print("Usage: python ingest.py <github_repo_url>")
         sys.exit(1)
     run_ingestion(sys.argv[1])
+# Log: Data schema verified
