@@ -12,7 +12,7 @@ GROQ_API_KEY = os.environ.get("GROQ_API_KEY")
 CHROMA_DIR = "chroma_db"
 SYSTEM_TEMPLATE = """You must ONLY answer using the provided context.
 If the answer is truly not present anywhere in the context, say exactly:
-I could not find that in the codebase.
+I could not find a definitive answer in the codebase context.
 Never guess. Never use outside knowledge.
 If multiple chunks together contain relevant information, combine them to give the best possible response.
 If the answer is not explicitly stated but can be reasonably inferred from the context, provide the inferred answer and mention which file it came from.
