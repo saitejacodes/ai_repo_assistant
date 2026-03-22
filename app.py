@@ -134,7 +134,7 @@ with st.sidebar:
         UI: Streamlit
     </div>
     """, unsafe_allow_html=True)
-st.title("Chat with your Codebase")
+st.title("Repository Intelligence Dashboard")
 if not st.session_state.repo_loaded:
     st.markdown("""
     <div class="chat-placeholder">
