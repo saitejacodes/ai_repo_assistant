@@ -1,4 +1,5 @@
 import os
+import torch
 from dotenv import load_dotenv
 load_dotenv()
 from langchain_community.embeddings import HuggingFaceEmbeddings
@@ -34,9 +35,10 @@ Context from codebase:
 
 Question: {question}"""
 def load_vectorstore(persist_directory=CHROMA_DIR):
+    device = "mps" if torch.backends.mps.is_available() else "cuda" if torch.cuda.is_available() else "cpu"
     embeddings = HuggingFaceEmbeddings(
         model_name="all-MiniLM-L6-v2",
-        model_kwargs={"device": "mps"}
+        model_kwargs={"device": device}
     )
     vectorstore = Chroma(
         persist_directory=persist_directory,

@@ -1,5 +1,6 @@
 import os
 import shutil
+import torch
 from git import Repo
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
@@ -74,9 +75,11 @@ def chunk_documents(documents):
     return chunks
 def create_embeddings():
     print("Loading embedding model (all-MiniLM-L6-v2)...")
+    device = "mps" if torch.backends.mps.is_available() else "cuda" if torch.cuda.is_available() else "cpu"
+    print(f"Using device: {device}")
     embeddings = HuggingFaceEmbeddings(
         model_name="all-MiniLM-L6-v2",
-        model_kwargs={"device": "mps"}
+        model_kwargs={"device": device}
     )
     print("Embedding model loaded!")
     return embeddings

@@ -2,6 +2,7 @@ langchain
 langchain-community
 langchain-groq
 chromadb
+torch
 sentence-transformers
 gitpython
 streamlit
