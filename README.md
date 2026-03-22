@@ -125,3 +125,6 @@ The assistant uses **Retrieval Augmented Generation (RAG)**. Instead of training
 
 ## 📜 License
 MIT License. Feel free to use and modify for your own projects.
+
+---
+Created with local-to-cloud RAG pipeline architecture.
