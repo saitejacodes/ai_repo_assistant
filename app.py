@@ -127,7 +127,7 @@ with st.sidebar:
     st.markdown("""
     <div class="stack-info">
         <strong>Tech Stack</strong><br>
-        ⚡ LLM: Llama 3.3 70B (Groq)<br>
+        🌟 Intelligence: Llama 3.3 70B (Groq)<br>
         Embeddings: all-MiniLM-L6-v2<br>
         Vector DB: ChromaDB<br>
         Framework: LangChain<br>
