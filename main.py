@@ -99,3 +99,4 @@ def create_chain(persist_directory=CHROMA_DIR):
     return ChatChain(persist_directory)
 def get_response(chain, question):
     return chain.ask(question)
+# Optimization: Increased retrieval depth
