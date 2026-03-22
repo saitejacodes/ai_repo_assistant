@@ -7,22 +7,17 @@
 ![License](https://img.shields.io/badge/License-MIT-gray)
 
 **Index any public GitHub repository and chat with your codebase using local embeddings and high-speed Groq LLMs.**
+##  Features
+-  **Instant Indexing:** Clone and index any public GitHub repo via URL.
+-  **Code-Aware Chat:** Ask natural language questions about complex logic or architecture.
+-  **Source Citations:** Every answer includes exact file-level references for easy verification.
+-  **Smart Memory:** Maintains context across follow-up questions for deep-dive debugging.
+-  **Zero Hallucination:** Strict prompt guardrails ensure the bot only answers from provided code context.
+-  **Local + Cloud Hybrid:** Embeddings and Vector DB run 100% locally on your machine (MPS optimized for Mac).
+-  **No OpenAI Costs:** Uses the high-speed Groq API free tier for the heavy lifting.
+-  **Multi-Format:** Supports 15+ file types including `.py`, `.js`, `.ts`, `.ipynb`, `.csv`, `.md`, `.json`, `.yaml`, etc.
 
----
-
-![Demo](demo.gif)
-
-## 🚀 Features
-- 📂 **Instant Indexing:** Clone and index any public GitHub repo via URL.
-- 💬 **Code-Aware Chat:** Ask natural language questions about complex logic or architecture.
-- 📍 **Source Citations:** Every answer includes exact file-level references for easy verification.
-- 🧠 **Smart Memory:** Maintains context across follow-up questions for deep-dive debugging.
-- 🛡️ **Zero Hallucination:** Strict prompt guardrails ensure the bot only answers from provided code context.
-- ⚡ **Local + Cloud Hybrid:** Embeddings and Vector DB run 100% locally on your machine (MPS optimized for Mac).
-- 🔓 **No OpenAI Costs:** Uses the high-speed Groq API free tier for the heavy lifting.
-- 📄 **Multi-Format:** Supports 15+ file types including `.py`, `.js`, `.ts`, `.ipynb`, `.csv`, `.md`, `.json`, `.yaml`, etc.
-
-## 🏗️ Architecture
+##  Architecture
 The system follows a classic **Retrieval Augmented Generation (RAG)** pipeline optimized for code:
 
 ```text
@@ -32,7 +27,7 @@ GitHub URL ──▶ Clone ──▶ Read Files ──▶ Chunk (Code/NB) ──
 Result ◀── LLM (Groq) ◀── Retrieve Chunks ◀── Query ◀── Prompt Construction ◀── User Input
 ```
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 | Component | Tool | Purpose |
 |---|---|---|
@@ -61,11 +56,7 @@ Result ◀── LLM (Groq) ◀── Retrieve Chunks ◀── Query ◀── 
 - A [Groq API Key](https://console.groq.com/) (Free tier)
 
 ### 2. Clone the Repository
-```bash
-git clone https://github.com/your-username/github-repo-chat.git
-cd github-repo-chat
-```
-
+https://github.com/saitejacodes/ai_repo_assistant
 ### 3. Install Dependencies
 ```bash
 # Create a virtual environment
@@ -86,7 +77,7 @@ Add your Groq API key:
 GROQ_API_KEY=your_gsk_key_here
 ```
 
-## 🎮 Usage
+## Usage
 Run the application using Streamlit:
 ```bash
 streamlit run app.py
@@ -98,33 +89,18 @@ streamlit run app.py
    - *"Where are the results saved after processing?"*
    - *"Which file contains the main entry point?"*
 
-## 📊 Evaluation Results
-The system was validated against a 25-question blind evaluation suite on the `FinanceAnomalyDetector` repository.
-
-| Category | Max Score | Result |
-|---|---|---|
-| **Knowledge Retrieval** | 800 | 760 |
-| **Hallucination Detection** | 50 | 40 |
-| **Memory Retention** | 30 | 30 |
-| **TOTAL SCORE** | **880** | **830 (94%)** |
-
-**Grade:** Production Ready ✅
-
-## 🧠 How It Works
+##  How It Works
 The assistant uses **Retrieval Augmented Generation (RAG)**. Instead of training the AI on your code, it "looks up" the relevant files before answering. When you ask a question, the system converts it into a vector, finds the most similar code snippets in ChromaDB, and passes those snippets to the LLM as "context" to ensure accuracy and prevent hallucinations.
 
-## ⚠️ Known Limitations
+##  Known Limitations
 - **Public Repos Only:** Private repos are not currently supported without SSH keys.
 - **Single-Repo Focus:** The system is optimized for one repository at a time.
 - **Branch Support:** Defaults to the main/master branch of the repo.
 
-## 🔜 Future Improvements
-- 🤖 **PR Review Bot:** Integration for automated pull request feedback.
-- 📚 **Multi-Repo Search:** Capability to query across multiple indexed repositories.
-- ⚡ **Enhanced Notebook Chunking:** Targeted improvements for `.ipynb` cell-wise retrieval.
+##  Future Improvements
+-  **PR Review Bot:** Integration for automated pull request feedback.
+-  **Multi-Repo Search:** Capability to query across multiple indexed repositories.
+-  **Enhanced Notebook Chunking:** Targeted improvements for `.ipynb` cell-wise retrieval.
 
-## 📜 License
+## License
 MIT License. Feel free to use and modify for your own projects.
-
----
-Created with local-to-cloud RAG pipeline architecture.
