@@ -41,7 +41,7 @@ def load_files():
                         "content": content,
                         "metadata": {
                             "source": rel_path,
-                            "filename": file
+                            "filename": file, "indexed_at": "today"
                         }
                     })
                     file_count += 1
