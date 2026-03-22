@@ -11,6 +11,9 @@ SUPPORTED_EXTENSIONS = {
     ".go", ".rs", ".jsx", ".tsx", ".md", ".html", ".css", ".ipynb", ".json", ".yml", ".yaml",".csv",".txt"
 }
 IGNORED_DIRS = {".git", "node_modules", "__pycache__", "dist", "build", ".venv", "outputs"}
+"""
+Clones a public GitHub repository to a local directory.
+"""
 def clone_repo(repo_url):
     print("Cleaning up old data...")
     if os.path.exists(CLONE_DIR):
